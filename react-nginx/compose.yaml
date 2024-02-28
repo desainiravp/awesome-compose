@@ -1,7 +1,7 @@
 version: '3'
 services:
   frontend:
-    image: my-registry/react-nginx-image:latest
+    image: react-nginx-image:latest
     container_name: frontend
     ports:
       - "80:80"
