@@ -1,8 +1,7 @@
 services:
-  web: 
+  web:
     image: django-image:latest
-    ports: 
+    ports:
       - "8000:8000"
     deploy:
-      replicas:1   
-    
+      replicas: 1
