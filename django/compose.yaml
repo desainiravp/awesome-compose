@@ -4,4 +4,6 @@ services:
       context: app
       target: builder
     ports: 
-      - '8000:8000'
+      - "80"
+    deploy:
+      replicas:1
