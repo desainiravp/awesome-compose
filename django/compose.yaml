@@ -1,8 +1,7 @@
 services:
   web: 
     image: django-image:latest
-      context: app
-      target: builder
+         
     ports: 
       - "80"
     deploy:
