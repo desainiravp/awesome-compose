@@ -2,20 +2,14 @@
 FROM --platform=$BUILDPLATFORM python:3.7-alpine AS builder
 EXPOSE 8000
 WORKDIR /app 
-COPY requirements.txt /app
-RUN pip3 install -r requirements.txt --no-cache-dir
-COPY . /app 
-ENTRYPOINT ["python3"] 
-CMD ["manage.py", "runserver", "0.0.0.0:8000"]
+COPY requirements.txt /app/
 
-FROM builder as dev-envs
 RUN apk update && \
-    apk add git && \
-    addgroup -S docker && \
-    adduser -S --shell /bin/bash --ingroup docker vscode
+    apk add --no-cache git && \
+    pip install --no-cache-dir -r requirements.txt
 
-# Install Docker tools (cli, buildx, compose)
-COPY --from=gloursdocker/docker / /
+COPY . /app/
+ENTRYPOINT ["python3"]
 
 CMD ["manage.py", "runserver", "0.0.0.0:8000"]
 
