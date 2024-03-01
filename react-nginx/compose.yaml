@@ -1,7 +1,7 @@
 version: '3'
 services:
   frontend:
-    image: react-nginx-image-new:latest
+    image: localhost:8080/nirav1611/react-nginx-image-new:latest
     ports:
       - "80"
     deploy:
