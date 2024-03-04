@@ -4,11 +4,14 @@ services:
     image: react-nginx-image-new:latest
     ports:
       - "80"
-    deploy:
+    deploy:  
       replicas: 2
       placement:
-        constraints:          
-          - node.resources.cpu >= 2
-          - node.resources.memory >= 4G
+       constraints:
+          - node.role == worker     
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
       
         
