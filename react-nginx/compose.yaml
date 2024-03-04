@@ -6,5 +6,9 @@ services:
       - "80"
     deploy:
       replicas: 2
+      placement:
+        constraints:          
+          - node.resources.cpu >= 2
+          - node.resources.memory >= 4G
       
         
