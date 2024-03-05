@@ -10,6 +10,5 @@ services:
       - "80:80"
     depends_on:
       - backend
-
   backend:
     image: backend_image:1.0.0
