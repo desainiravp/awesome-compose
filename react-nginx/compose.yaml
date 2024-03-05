@@ -1,11 +1,11 @@
 version: '3.7'
 services:
   frontend:
-    image: react-nginx-image-new:latest
+    image: react-nginx:1.0.0
     ports:
       - "80"
     deploy:  
-      replicas: 1
+      replicas: 2
       placement:
        constraints:
           - node.role == worker     
