@@ -15,4 +15,5 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+      image: backend_image:1.0.0
       target: builder
